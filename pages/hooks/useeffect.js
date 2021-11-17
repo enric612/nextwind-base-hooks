@@ -38,7 +38,7 @@ export default function useEffectPage() {
             <h1 className="text-9xl">{resourceType}</h1>
             <ul className="my-10">
                 {items.map((item, index) => {
-                    return <li key={index} className="my-10 bg-gray-400">{JSON.stringify(item)}</li>
+                    return <li key={index} className="my-10 bg-gray">{JSON.stringify(item)}</li>
                 })}
             </ul>
         </>
