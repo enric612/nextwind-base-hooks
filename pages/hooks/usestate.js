@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 
 function useStatePage() {
-    
+    // useState return array with value and setter for that value, receives 
+    // an optional argument with initial state.
+    // const [value, setValue] = useState(initialValue);
     const [count, setCount] = useState(4);
 
     // Decrement Count function
