@@ -6,7 +6,7 @@ export default function useEffectPage() {
     const [items, setItems] = useState([]);
 
     // UseEffect executes function every change of array arguments:
-    // useEffect(function, array_arguments (optional))
+    // useEffect(function, array_arguments (optional, can be empty array))
     // If no second argument is passed, only execute once
     // Excecutes return content when component willUnmount or 
     // before argument change.
@@ -38,7 +38,7 @@ export default function useEffectPage() {
             <h1 className="text-9xl">{resourceType}</h1>
             <ul className="my-10">
                 {items.map((item, index) => {
-                    return <li key={index} className="my-10 bg-gray">{JSON.stringify(item)}</li>
+                    return <li key={index} className="my-10 bg-gray-400">{JSON.stringify(item)}</li>
                 })}
             </ul>
         </>
