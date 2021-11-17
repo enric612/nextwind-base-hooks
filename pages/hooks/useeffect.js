@@ -11,7 +11,7 @@ export default function useEffectPage() {
     // before argument change.
     useEffect(() => {
         console.log('render')
-    }, [resourceType]);
+    }, [resourceType]); 
 
     return (
         <>
