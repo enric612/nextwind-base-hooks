@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 export default function useEffectPage() {
 
     const [resourceType, setResourceType] = useState('posts');
+    const [items, setItems] = useState([]);
 
     // UseEffect executes function every change of array arguments:
     // useEffect(function, array_arguments (optional))
@@ -12,7 +13,7 @@ export default function useEffectPage() {
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
             .then(response => response.json())
-            .then(json => console.log(json))
+            .then(json => setItems(json))
     }, [resourceType]);
 
     return (
@@ -35,6 +36,11 @@ export default function useEffectPage() {
                 </button>
             </div>
             <h1 className="text-9xl">{resourceType}</h1>
+            <ul className="my-10">
+                {items.map((item, index) => {
+                    return <li key={index} className="my-10 bg-gray-400">{JSON.stringify(item)}</li>
+                })}
+            </ul>
         </>
 
     )
